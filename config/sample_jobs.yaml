@@ -1,0 +1,45 @@
+jobs:
+  - id: SAMPLE-PC-001
+    title: Protection & Control Engineer-in-Training
+    location: Toronto, Ontario, Canada
+    city: Toronto
+    province: Ontario
+    country: Canada
+    remote_type: hybrid
+    description: >-
+      Join the substation protection team to develop protective relay settings,
+      IEC 61850 GOOSE logic, transformer and bus protection schemes, and perform
+      relay testing with SEL relays and Omicron equipment. New graduates and EITs
+      with utility or power systems experience are encouraged to apply.
+    job_url: https://example.invalid/jobs/SAMPLE-PC-001
+    date_posted: 2026-08-31
+    employment_type: Full-time
+    experience_level: Entry level
+
+  - id: SAMPLE-SCADA-002
+    title: Junior SCADA and Grid Automation Engineer
+    location: Burnaby, British Columbia, Canada
+    city: Burnaby
+    province: British Columbia
+    country: Canada
+    remote_type: on-site
+    description: >-
+      Support utility SCADA, substation automation, IEC 61850 integration, and
+      commissioning. Candidates with zero to two years of experience are welcome.
+    job_url: https://example.invalid/jobs/SAMPLE-SCADA-002
+    date_posted: 2026-08-30
+    employment_type: Full-time
+    experience_level: Junior
+
+  - id: SAMPLE-SENIOR-003
+    title: Senior Electrical Engineering Manager
+    location: Calgary, Alberta, Canada
+    city: Calgary
+    province: Alberta
+    country: Canada
+    remote_type: on-site
+    description: Requires 10+ years of engineering management experience.
+    job_url: https://example.invalid/jobs/SAMPLE-SENIOR-003
+    date_posted: 2026-08-29
+    employment_type: Full-time
+    experience_level: Senior

@@ -1,0 +1,94 @@
+database_path: data/jobs.db
+log_path: logs/job_monitor.log
+report_directory: reports
+timezone: America/Vancouver
+
+daily_application_goal: 3
+minimum_job_score: 45
+urgent_notification_score: 85
+high_priority_score: 75
+medium_priority_score: 55
+close_missing_after_days: 14
+dedup_similarity_threshold: 93
+
+preferred_locations:
+  tier_1:
+    - Ontario
+  tier_2:
+    - British Columbia
+  tier_3:
+    - Canada
+  preferred_cities:
+    - Toronto
+    - Mississauga
+    - Markham
+    - Ottawa
+    - Vancouver
+    - Burnaby
+  canada_wide: true
+  allow_international: false
+
+remote_preferences:
+  remote: 8
+  hybrid: 7
+  on-site: 4
+  unknown: 0
+
+experience_level:
+  maximum_preferred_years: 3
+
+scanner:
+  # Different company websites are fetched concurrently. Database writes remain sequential.
+  max_concurrent_sources: 4
+
+scoring:
+  company_priority:
+    critical: 25
+    tier_1: 20
+    tier_2: 12
+    tier_3: 5
+  role:
+    highest: 30
+    power_systems: 25
+    medium: 15
+    adjacent: 5
+  entry_level_bonus: 20
+  technical_keyword_cap: 24
+  location:
+    tier_1: 12
+    tier_2: 8
+    tier_3: 4
+    preferred_city_bonus: 3
+    international_penalty: -15
+
+network:
+  timeout_seconds: 25
+  retries: 3
+  backoff_factor: 1.0
+  request_interval_seconds: 0.5
+  user_agent: JobSearchMonitor/1.0 (+personal, respectful job monitoring)
+
+notifications:
+  desktop_enabled: true
+  email_enabled: false
+  notify_only_new: true
+  max_immediate_notifications_per_scan: 5
+
+linkedin_email:
+  directory: data/linkedin_emails
+  # Official-company-only mode: do not connect to Gmail or job aggregators.
+  imap_enabled: false
+  mailbox: INBOX
+  # Gmail is searched separately for each sender. Add/remove services here.
+  sender_contains:
+    - linkedin.com
+    - indeed.com
+    - glassdoor.com
+    - jobbank.gc.ca
+  subject_contains: ""
+  lookback_days: 14
+  max_messages_per_sync: 100
+  mark_as_read: false
+
+dashboard:
+  refresh_on_start: true

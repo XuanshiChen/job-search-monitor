@@ -1,0 +1,13 @@
+.venv/
+.agents/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.env
+data/*.db
+data/*.db-*
+data/linkedin_emails/*.eml
+logs/*.log*
+reports/*.md
+.streamlit/secrets.toml

@@ -1,0 +1,104 @@
+role_categories:
+  highest:
+    - protection & control engineer
+    - protection and control engineer
+    - protection engineer
+    - protection and automation engineer
+    - relay engineer
+    - relay protection engineer
+    - power system protection engineer
+    - substation protection engineer
+    - electrical engineer protection
+    - protection application engineer
+    - field application engineer protection
+    - electrical engineer p&c
+    - electrical engineer p and c
+  power_systems:
+    - substation engineer
+    - electrical engineer substation
+    - power systems engineer
+    - power system engineer
+    - grid automation engineer
+    - power automation engineer
+    - application engineer power systems
+    - technical application engineer
+    - power systems consultant
+    - power system studies engineer
+  medium:
+    - electrical engineer
+    - electrical eit
+    - electrical designer
+    - control engineer
+    - scada engineer
+    - automation engineer
+    - commissioning engineer
+    - field service engineer
+    - test engineer
+    - system engineer
+    - utility engineer
+    - transmission engineer
+    - distribution engineer
+  adjacent:
+    - project engineer
+    - design engineer
+    - reliability engineer
+    - energy engineer
+
+entry_level_keywords:
+  - new grad
+  - new graduate
+  - graduate engineer
+  - entry level
+  - junior
+  - eit
+  - engineer in training
+  - early career
+  - recent graduate
+  - university graduate
+  - campus
+  - associate engineer
+  - engineer i
+
+technical_keywords:
+  iec 61850: 5
+  goose: 4
+  sampled values: 4
+  protection: 4
+  protective relay: 4
+  relay testing: 4
+  relay: 3
+  substation: 4
+  transformer protection: 4
+  bus protection: 4
+  sel relay: 4
+  siprotec: 4
+  ge multilin: 4
+  ge vernova ur: 4
+  omicron: 4
+  scada: 3
+  grid automation: 4
+  power system studies: 4
+  autocad: 2
+  transmission: 2
+  distribution: 2
+
+# A hard exclusion applies only when found in the title. Keep this list narrow.
+hard_exclusion_title_keywords:
+  - director
+  - vice president
+  - chief engineer
+  # Building fire-protection roles are unrelated to protective-relay work.
+  - fire protection
+
+# Soft penalties are stronger in the title and lighter in the description.
+soft_penalty_keywords:
+  senior: 12
+  principal: 15
+  staff engineer: 15
+  manager: 15
+  lead engineer: 10
+  10+ years: 20
+  8+ years: 15
+  5+ years: 10
+  pe required: 10
+  p.eng required immediately: 12

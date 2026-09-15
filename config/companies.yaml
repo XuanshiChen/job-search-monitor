@@ -1,0 +1,688 @@
+# Edit company tiers and aliases here; no Python changes are required.
+# These adapters use public career pages/endpoints only.
+
+engineering_titles: &engineering_titles
+  - electrical
+  - protection
+  - relay
+  - substation
+  - power
+  - grid
+  - scada
+  - automation
+  - control engineer
+  - controls engineer
+  - protection & control
+  - protection and control
+  - instrumentation and control
+  - commissioning engineer
+  - field service engineer
+  - test engineer
+  - system engineer
+  - systems engineer
+  - utility engineer
+  - application engineer
+  - application specialist
+  - transmission
+  - distribution
+  - engineering trainee
+  - graduate engineer
+  - engineer in training
+  - engineer-in-training
+  - eit
+  - electrical designer
+  - electrical technologist
+  - ingenieur
+  - electrique
+  - electricite
+
+utility_titles: &utility_titles
+  - engineer
+  - engineering
+  - electrical
+  - protection
+  - relay
+  - substation
+  - power
+  - grid
+  - scada
+  - automation
+  - control
+  - transmission
+  - distribution
+  - utility
+  - technologist
+  - technician
+  - eit
+  - graduate
+  - student
+  - co-op
+  - intern
+
+target_search_terms: &target_search_terms
+  - protection
+  - relay
+  - substation
+  - power systems
+  - electrical engineer
+  - application engineer
+  - automation
+  - new graduate
+
+companies:
+  critical:
+    - name: Hydro One
+      aliases: [Hydro One Networks Inc, Hydro One Networks Inc., Hydro One Networks]
+      careers_url: https://jobs.hydroone.com/
+      search_url: https://jobs.hydroone.com/search/?q=&locationsearch=Ontario
+      source_type: successfactors
+      enabled: true
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 10
+        max_details: 100
+
+    - name: IESO
+      aliases: [Independent Electricity System Operator, Independent Electricity System Operator (IESO)]
+      careers_url: https://www.ieso.ca/careers
+      search_url: https://careers.ieso.ca/go/Career-Opportunities/8924000/
+      source_type: successfactors
+      enabled: true
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 5
+        max_details: 75
+
+    - name: Bruce Power
+      aliases: [Bruce Power L.P., Bruce Power LP]
+      careers_url: https://www.brucepower.com/careers/
+      search_url: https://brucepower.wd3.myworkdayjobs.com/BrucePower
+      source_type: workday
+      enabled: true
+      options:
+        host: https://brucepower.wd3.myworkdayjobs.com
+        tenant: brucepower
+        site: BrucePower
+        locale: en-US
+        include_title_keywords: *utility_titles
+        fetch_details: true
+
+    - name: Ontario Power Generation
+      aliases: [OPG, Ontario Power Generation Inc., Ontario Power Generation Inc]
+      careers_url: https://jobs.opg.com/
+      search_url: https://jobs.opg.com/search/?q=&locationsearch=Ontario
+      source_type: successfactors
+      enabled: true
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 10
+        max_details: 100
+
+    - name: Siemens
+      aliases: [Siemens Canada, Siemens AG, Siemens Industry Software ULC]
+      careers_url: https://jobs.siemens.com/
+      search_url: https://jobs.siemens.com/en_US/externaljobs/SearchJobs/?folderId=481390
+      source_type: avature
+      enabled: true
+      options:
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: [Canada]
+        location_term: Canada
+        page_size: 100
+        max_pages: 2
+        max_details: 100
+
+    - name: SEL
+      aliases: [Schweitzer Engineering Laboratories, "Schweitzer Engineering Laboratories, Inc.", SEL Inc.]
+      careers_url: https://selinc.com/company/careers/
+      search_url: https://selinc.wd1.myworkdayjobs.com/en-US/SEL
+      source_type: workday
+      enabled: true
+      options:
+        host: https://selinc.wd1.myworkdayjobs.com
+        tenant: selinc
+        site: SEL
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: &canadian_locations
+          - Canada
+          - Ontario
+          - British Columbia
+          - Alberta
+          - Saskatchewan
+          - Manitoba
+          - Quebec
+          - New Brunswick
+          - Nova Scotia
+        max_jobs: 100
+        fetch_details: true
+
+    - name: GE Vernova
+      aliases: [General Electric Vernova, GE Grid Solutions, GE Renewable Energy, GE Power]
+      careers_url: https://careers.gevernova.com/jobs?filter%5Bcountry%5D%5B0%5D=Canada
+      search_url: https://careers.gevernova.com/jobs?filter%5Bcountry%5D%5B0%5D=Canada
+      source_type: paradox
+      enabled: true
+      options:
+        include_title_keywords: *engineering_titles
+        max_pages: 20
+        max_jobs: 150
+        max_details: 150
+        fetch_details: true
+
+    - name: Toronto Hydro
+      aliases: [Toronto Hydro Corporation, Toronto Hydro-Electric System Limited]
+      careers_url: https://www.torontohydro.com/careers
+      search_url: https://jobs.torontohydro.com/go/All-Jobs/2369717/
+      source_type: successfactors
+      enabled: true
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 5
+        max_details: 75
+
+    # The official vacancy search is an SAP WebDynpro app without a stable public
+    # listing feed. Aliases still give BC Hydro alert-email jobs critical priority.
+    - name: BC Hydro
+      aliases: [BCHYDRO, British Columbia Hydro and Power Authority]
+      careers_url: https://www.bchydro.com/careers.html
+      search_url: ""
+      source_type: generic_html
+      enabled: false
+
+  tier_1:
+    - name: BBA Consultants
+      aliases: [BBA, BBA Engineering, BBA Consultants Canada]
+      careers_url: https://jobs.bba.ca/
+      search_url: https://bba.csod.com/ux/ats/careersite/5/home?c=bba&lang=en-US
+      source_type: cornerstone
+      enabled: true
+      options:
+        career_site_id: 5
+        corp: bba
+        culture_id: 1
+        culture_name: en-US
+        search_terms: [electrical, protection, substation, power, automation, engineer]
+        country_codes: [CA]
+        include_title_keywords: *engineering_titles
+        page_size: 50
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+
+    - name: AltaLink
+      aliases: ["AltaLink, L.P.", AltaLink LP]
+      careers_url: https://www.altalink.ca/join-our-team/
+      search_url: https://apply.workable.com/altalink/
+      source_type: workable
+      enabled: true
+      options:
+        account: altalink
+        include_title_keywords: *engineering_titles
+        fetch_details: true
+
+    - name: Hatch
+      aliases: [Hatch Ltd., Hatch Ltd, Hatch Canada]
+      careers_url: https://jobs.hatch.com/
+      search_url: https://jobs.hatch.com/search/?q=&locationsearch=Canada
+      source_type: successfactors
+      enabled: true
+      options:
+        include_title_keywords: *engineering_titles
+        max_pages: 15
+        max_details: 150
+
+    - name: Tetra Tech
+      aliases: [Tetra Tech Canada, "Tetra Tech, Inc."]
+      careers_url: https://www.tetratech.com/careers/
+      search_url: https://tetratech.referrals.selectminds.com/page/nos-emplois-au-canada-642
+      source_type: selectminds
+      enabled: true
+
+    - name: Burns & McDonnell
+      aliases: [Burns and McDonnell, Burns & McDonnell Canada]
+      careers_url: https://www.burnsmcd.com/careers
+      search_url: https://burnsmcd.jobs/
+      source_type: jobsyn
+      enabled: true
+      options:
+        origin: burnsmcd.jobs
+        business_unit_ids: [27184, 56119]
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location: Canada
+        page_size: 25
+        max_pages: 5
+
+    - name: Eaton
+      aliases: [Eaton Corporation, Eaton Industries, Eaton Electrical]
+      careers_url: https://www.eaton.com/ca/en-gb/company/careers.html
+      search_url: https://eaton.eightfold.ai/careers
+      source_type: eightfold
+      enabled: true
+      options:
+        domain: eaton.com
+        search_terms: [protection, relay, substation, power systems, electrical engineer, automation]
+        include_title_keywords: *engineering_titles
+        location: Canada
+        max_pages: 10
+        max_jobs: 100
+        max_details: 100
+
+    - name: Sargent & Lundy
+      aliases: [Sargent and Lundy, Sargent & Lundy Canada]
+      careers_url: https://www.sargentlundy.com/careers/
+      search_url: https://international-sargentlundy.icims.com/jobs/search?ss=1
+      source_type: icims
+      enabled: true
+      options:
+        include_title_keywords: *engineering_titles
+        location_keywords: [Canada]
+        max_pages: 10
+        max_jobs: 100
+        max_details: 100
+
+    - name: Black & Veatch
+      aliases: [Black and Veatch, Black & Veatch Family of Companies]
+      careers_url: https://www.bv.com/en-US/careers
+      search_url: https://careers.bv.com/search/?q=&locationsearch=Canada
+      source_type: successfactors
+      enabled: true
+      options:
+        include_title_keywords: *engineering_titles
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+
+    - name: ABB
+      aliases: [ABB Canada, ABB Inc., ABB Electrification]
+      careers_url: https://careers.abb/global/en
+      search_url: https://abb.wd3.myworkdayjobs.com/External_Career_Page
+      source_type: workday
+      enabled: true
+      options:
+        host: https://abb.wd3.myworkdayjobs.com
+        tenant: abb
+        site: External_Career_Page
+        locale: en-US
+        search_terms: [protection and control, relay, substation, power systems, grid automation, electrical engineer]
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_jobs: 75
+        fetch_details: true
+
+    - name: Schneider Electric
+      aliases: [Schneider Electric Canada, Square D]
+      careers_url: https://careers.se.com/canada
+      search_url: https://careers.se.com/jobs?lang=en-US&location=Canada&woe=12&regionCode=CA
+      source_type: jibe
+      enabled: true
+      options:
+        host: https://careers.se.com
+        country: Canada
+        include_title_keywords: *engineering_titles
+        page_size: 20
+        max_pages: 5
+        max_jobs: 100
+        query:
+          lang: en-US
+          location: Canada
+          woe: 12
+          regionCode: CA
+
+    - name: Hitachi Energy
+      aliases: [Hitachi Energy Canada, Hitachi ABB Power Grids]
+      careers_url: https://www.hitachienergy.com/ca/en/careers
+      search_url: https://www.hitachienergy.com/careers/open-jobs
+      source_type: aem_joblist
+      enabled: true
+      options:
+        api_url: https://www.hitachienergy.com/careers/open-jobs/_jcr_content/root/container/content_1/content/grid_0/joblist.listsearchresults.json
+        query:
+          country: Canada
+        include_title_keywords: *engineering_titles
+        page_size: 20
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+        detail_description_selector: .cmp-job-details__description
+
+    - name: Stantec
+      aliases: [Stantec Canada, Stantec Consulting]
+      careers_url: https://www.stantec.com/en/careers
+      search_url: https://stantec.jobs/jobs/?q=electrical&location=Canada
+      source_type: jobsyn
+      enabled: true
+      options:
+        origin: stantec.jobs
+        business_unit_ids: [49606, 45460, 41669, 41668, 38596, 57587, 57500, 58027]
+        search_terms: [protection, relay, substation, power systems, electrical, automation]
+        include_title_keywords: *engineering_titles
+        location: Canada
+        page_size: 50
+        max_pages: 2
+
+    - name: FortisBC
+      aliases: [Fortis BC, FortisBC Inc.]
+      careers_url: https://www.fortisbc.com/about-us/careers
+      search_url: https://careers.fortisbc.com/search/?q=&locationsearch=
+      source_type: successfactors
+      enabled: false
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+
+    - name: Canadian Nuclear Laboratories
+      aliases: [CNL, Canadian Nuclear Laboratories Ltd., Canadian Nuclear Laboratories LTD]
+      careers_url: https://www.cnl.ca/careers/
+      search_url: https://tre.tbe.taleo.net/tre01/ats/careers/v2/jobSearch?cws=37&org=CNLLTD
+      source_type: taleo_business
+      enabled: false
+      options:
+        org: CNLLTD
+        cws: 37
+        include_title_keywords: *engineering_titles
+        max_pages: 30
+        max_jobs: 100
+        max_details: 100
+        fetch_details: true
+
+  tier_2:
+    - name: Rockwell Automation
+      aliases: [Rockwell, Rockwell Automation Canada]
+      careers_url: https://www.rockwellautomation.com/en-ca/company/careers.html
+      search_url: https://rockwellautomation.wd1.myworkdayjobs.com/External_Rockwell_Automation
+      source_type: workday
+      enabled: false
+      options:
+        host: https://rockwellautomation.wd1.myworkdayjobs.com
+        tenant: rockwellautomation
+        site: External_Rockwell_Automation
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        fetch_details: true
+
+    - name: AtkinsRealis
+      aliases: [AtkinsRéalis, AtkinsRÃ©alis, "AtkinsR��alis", SNC-Lavalin]
+      careers_url: https://careers.atkinsrealis.com/
+      search_url: https://slihrms.wd3.myworkdayjobs.com/Careers
+      source_type: workday
+      enabled: false
+      options:
+        host: https://slihrms.wd3.myworkdayjobs.com
+        tenant: slihrms
+        site: Careers
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        fetch_details: true
+
+    - name: Barr Engineering
+      aliases: [Barr Engineering Co., Barr Engineering Company]
+      careers_url: https://www.barr.com/Careers
+      search_url: https://barr.wd1.myworkdayjobs.com/BarrCareers
+      source_type: workday
+      enabled: false
+      options:
+        host: https://barr.wd1.myworkdayjobs.com
+        tenant: barr
+        site: BarrCareers
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        fetch_details: true
+
+    - name: Enbridge
+      aliases: [Enbridge Inc., Enbridge Gas]
+      careers_url: https://www.enbridge.com/work-with-enbridge/careers
+      search_url: https://enbridge.wd3.myworkdayjobs.com/enbridge_careers
+      source_type: workday
+      enabled: false
+      options:
+        host: https://enbridge.wd3.myworkdayjobs.com
+        tenant: enbridge
+        site: enbridge_careers
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        fetch_details: true
+
+    - name: TC Energy
+      aliases: [TC Energy Corporation, TransCanada]
+      careers_url: https://www.tcenergy.com/about/careers/
+      search_url: https://tcenergy.wd3.myworkdayjobs.com/CAREER_SITE_TC
+      source_type: workday
+      enabled: false
+      options:
+        host: https://tcenergy.wd3.myworkdayjobs.com
+        tenant: tcenergy
+        site: CAREER_SITE_TC
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        fetch_details: true
+
+    - name: Capital Power
+      aliases: [Capital Power Corporation, Capital Power Corp.]
+      careers_url: https://www.capitalpower.com/careers/
+      search_url: https://capitalpower.wd10.myworkdayjobs.com/External
+      source_type: workday
+      enabled: false
+      options:
+        host: https://capitalpower.wd10.myworkdayjobs.com
+        tenant: capitalpower
+        site: External
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        fetch_details: true
+
+    - name: ENMAX
+      aliases: [ENMAX Corporation, ENMAX Power]
+      careers_url: https://www.enmax.com/careers
+      search_url: https://enmax.wd3.myworkdayjobs.com/ENMAXCareers/jobs
+      source_type: workday
+      enabled: false
+      options:
+        host: https://enmax.wd3.myworkdayjobs.com
+        tenant: enmax
+        site: ENMAXCareers
+        locale: en-US
+        search_terms: *target_search_terms
+        include_title_keywords: *utility_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        fetch_details: true
+
+    - name: SaskPower
+      aliases: [Saskatchewan Power Corporation, Saskatchewan Power]
+      careers_url: https://jobs.saskpower.com/
+      search_url: https://jobs.saskpower.com/search/?q=&locationsearch=
+      source_type: successfactors
+      enabled: false
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+
+    - name: TransAlta
+      aliases: [TransAlta Corporation, TransAlta Corp.]
+      careers_url: https://jobs.transalta.com/
+      search_url: https://jobs.transalta.com/search/?q=&locationsearch=Canada
+      source_type: successfactors
+      enabled: false
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+
+    - name: FortisAlberta
+      aliases: [Fortis Alberta, FortisAlberta Inc.]
+      careers_url: https://www.fortisalberta.com/about-us/careers
+      search_url: https://careers.fortisalberta.com/go/View-All-Jobs/9109900/
+      source_type: successfactors
+      enabled: false
+      options:
+        include_title_keywords: *utility_titles
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+
+    - name: EPCOR
+      aliases: [EPCOR Utilities, EPCOR Canada, EPCOR Distribution & Transmission]
+      careers_url: https://www.epcor.com/ca/en/careers/jobs.html
+      search_url: https://jobs.jobvite.com/epcor/jobs
+      source_type: jobvite
+      enabled: false
+      options:
+        include_title_keywords: *utility_titles
+        location_keywords: *canadian_locations
+        max_jobs: 100
+        max_details: 100
+
+    - name: Aecon Group Inc.
+      aliases: [Aecon, Aecon Group, Aecon Utilities]
+      careers_url: https://www.aecon.com/join-our-team
+      search_url: https://jobs.aecon.com/search/?q=&locationsearch=Canada
+      source_type: successfactors
+      enabled: false
+      options:
+        include_title_keywords: *engineering_titles
+        max_pages: 10
+        max_jobs: 100
+        max_details: 100
+
+    - name: CIMA+
+      aliases: [CIMA Plus, CIMA Plus Inc., CIMA+ Canada]
+      careers_url: https://www.cima.ca/en/careers/
+      search_url: https://www.cima.ca/en/careers/?noq=0&pagination=1
+      source_type: generic_html
+      enabled: false
+      options:
+        include_title_keywords: *engineering_titles
+        page_param: pagination
+        page_start: 1
+        max_pages: 20
+        max_jobs: 150
+        max_details: 40
+        detail_description_selector: .JobAddDescriptionText, .JobAddQualificationText, .JobAddInfoText
+        selectors:
+          item: "#joblist ul.jobLine:has(a.jobDetailLink)"
+          title: a.jobDetailLink
+          link: a.jobDetailLink
+          location: .jobLocation
+          date_posted: .jobDate
+          id_query_param: post
+
+    - name: Artelia Canada
+      aliases: [Artelia, Artelia Group, FNX-INNOV]
+      careers_url: https://careers.arteliagroup.com/canada-en/jobs
+      search_url: https://careers.smartrecruiters.com/Artelia/canada-en
+      source_type: smartrecruiters
+      enabled: false
+      options:
+        company_identifier: Artelia
+        country_codes: [ca]
+        include_title_keywords: *engineering_titles
+        max_jobs: 150
+        max_details: 100
+        fetch_details: true
+
+    - name: Arup Canada
+      aliases: [Arup, Arup Group, Ove Arup]
+      careers_url: https://www.arup.com/careers/
+      search_url: https://jobs.arup.com/page/jobs-in-canada-466
+      source_type: selectminds
+      enabled: false
+      options:
+        include_title_keywords: *engineering_titles
+        max_jobs: 100
+
+    - name: AECOM Canada
+      aliases: [AECOM, AECOM Canada Ltd.]
+      careers_url: https://aecom.com/en-ca/careers/
+      search_url: https://canada.aecom.jobs/jobs/
+      source_type: jobsyn
+      enabled: false
+      options:
+        origin: canada.aecom.jobs
+        business_unit_ids: [55872]
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location: Canada
+        page_size: 50
+        max_pages: 5
+
+    - name: Arcadis Canada
+      aliases: [Arcadis, IBI Group, Arcadis Professional Services]
+      careers_url: https://www.arcadis.com/en-ca/careers
+      search_url: https://jobs.arcadis.com/careers?domain=arcadis.com
+      source_type: eightfold
+      enabled: false
+      options:
+        host: https://jobs.arcadis.com
+        domain: arcadis.com
+        search_terms: *target_search_terms
+        include_title_keywords: *engineering_titles
+        location: Canada
+        max_pages: 5
+        max_jobs: 100
+        max_details: 100
+
+    - name: Kiewit Canada
+      aliases: [Kiewit, Kiewit Corporation, Kiewit Energy Canada]
+      careers_url: https://www.kiewit.com/careers/
+      search_url: https://kiewitcareers.kiewit.com/search/?q=&locationsearch=Canada
+      source_type: successfactors
+      enabled: false
+      options:
+        include_title_keywords: *engineering_titles
+        location_keywords: *canadian_locations
+        max_pages: 40
+        max_jobs: 150
+        max_details: 100
+
+    # WSP is intentionally not enabled: its public listing currently returns a
+    # Cloudflare verification page to unattended clients. Keep the canonical
+    # company and aliases for email deduplication without bypassing that control.
+    - name: WSP in Canada
+      aliases: [WSP, WSP Canada, WSP Global]
+      careers_url: https://www.wsp.com/en-ca/careers/
+      search_url: https://www.wsp.com/en-ca/careers/job-opportunities?country=CA
+      source_type: generic_html
+      enabled: false
+      options:
+        coverage_note: Cloudflare verification; supplemental email alerts only
+
+  tier_3:
+    # Optional email aggregation is retained in code for future use, but disabled.
+    - name: Aggregated Job Alerts
+      careers_url: https://www.linkedin.com/jobs/
+      search_url: data/linkedin_emails
+      source_type: job_alert_email
+      enabled: false
+
+    - name: Sample Power Utility
+      careers_url: ""
+      search_url: config/sample_jobs.yaml
+      source_type: sample
+      enabled: false
